@@ -1576,6 +1576,119 @@ section {
     font-size: 0.9375rem;
 }
 
+/* === Product List Table === */
+.product-list-section {
+    margin-top: var(--spacing-xxl);
+    padding-top: var(--spacing-xxl);
+    border-top: 2px solid #E2E8F0;
+}
+
+.product-list-title {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-black);
+    color: var(--text-midnight);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.product-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    margin-bottom: var(--spacing-xl);
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #FFFFFF;
+    font-size: 0.875rem;
+}
+
+.product-table thead {
+    background: linear-gradient(135deg, var(--secondary-navy), #1F2937);
+    color: #FFFFFF;
+}
+
+.product-table th {
+    padding: 16px 12px;
+    text-align: left;
+    font-weight: var(--font-weight-bold);
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+}
+
+.product-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #F1F5F9;
+    color: var(--text-slate);
+    line-height: 1.6;
+}
+
+.product-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.product-table tbody tr:hover {
+    background: #F8FAFC;
+}
+
+.product-table tbody tr.highlight {
+    background: #FFF7ED;
+}
+
+.product-table tbody tr.highlight:hover {
+    background: #FFEDD5;
+}
+
+.badge-signature {
+    display: inline-block;
+    padding: 3px 8px;
+    background: linear-gradient(135deg, #C83226, #C2410C);
+    color: #FFFFFF;
+    font-size: 0.6875rem;
+    font-weight: var(--font-weight-bold);
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+}
+
+.product-note {
+    background: linear-gradient(135deg, #F8FAFC, #EDF2F7);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--primary-red);
+}
+
+.product-note p {
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-slate);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+}
+
+.product-note p:first-child {
+    color: var(--text-midnight);
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+}
+
+.note-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: var(--spacing-md);
+    color: var(--primary-red);
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.note-link:hover {
+    color: #D32F2F;
+    transform: translateX(4px);
+}
+
 /* === Distribution === */
 .distribution {
     background: var(--bg-soft-mint);

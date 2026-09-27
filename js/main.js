@@ -149,10 +149,13 @@
         });
     }
     
-    // === Contact Form ===
+    // === Contact Form with Google Sheets Integration ===
     function setupContactForm() {
         const contactForm = document.getElementById('contactForm');
         if (!contactForm) return;
+        
+        // Google Apps Script Web App URL
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwXbzpjqjoQghUYkYaFO0f0GbhX0qC1fKXUV558JI6unSsLKB2xFtgDb9MZrwl-0etkwA/exec';
         
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -164,15 +167,58 @@
                 data[pair[0]] = pair[1];
             }
             
+            // 필수 항목 검증
             if (!data.company || !data.name || !data.email || !data.phone || !data.message) {
                 alert('필수 항목을 모두 입력해주세요.');
                 return;
             }
             
-            alert('견적 문의가 성공적으로 접수되었습니다.\n\n담당자: ' + data.name + '님\n회사명: ' + data.company + '\n\n빠른 시일 내에 연락드리겠습니다.');
+            // 제출 버튼 비활성화
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = '전송 중...';
+            }
             
-            contactForm.reset();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Google Sheets로 데이터 전송
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    company: data.company,
+                    name: data.name,
+                    email: data.email,
+                    phone: data.phone,
+                    message: data.message
+                })
+            })
+            .then(function() {
+                // no-cors 모드에서는 응답을 읽을 수 없으므로 성공으로 간주
+                alert('견적 문의가 성공적으로 접수되었습니다.\n\n담당자: ' + data.name + '님\n회사명: ' + data.company + '\n\n빠른 시일 내에 연락드리겠습니다.');
+                
+                contactForm.reset();
+                
+                // 버튼 복구
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = '견적 문의하기';
+                }
+                
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            })
+            .catch(function(error) {
+                console.error('Error:', error);
+                alert('전송 중 오류가 발생했습니다.\n다시 시도해주세요.');
+                
+                // 버튼 복구
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = '견적 문의하기';
+                }
+            });
         });
     }
     
