@@ -19,8 +19,34 @@
         setupHeaderScroll();
         setupContactForm();
         setupActiveTabHighlight();
+        setupDesktopTabAlign();
     }
     
+    // === Align PC tab menu under the 사 in 주식회사 ===
+    function setupDesktopTabAlign() {
+        const mark = document.querySelector('.logo-sa-mark');
+        const nav = document.querySelector('.sub-tab-nav');
+        if (!mark || !nav) return;
+
+        function alignNav() {
+            if (window.innerWidth < 768) {
+                nav.style.paddingLeft = '';
+                return;
+            }
+
+            const left = Math.round(mark.getBoundingClientRect().left);
+            nav.style.paddingLeft = left + 'px';
+            nav.style.justifyContent = 'flex-start';
+        }
+
+        alignNav();
+        window.addEventListener('resize', alignNav);
+
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(alignNav);
+        }
+    }
+
     // === Pill Tab Menu ===
     function setupPillTabMenu() {
         const tabChips = document.querySelectorAll('.tab-chip');
@@ -59,48 +85,26 @@
     
     // === Smooth Scroll ===
     function setupSmoothScroll() {
-        const ctaBtn = document.querySelector('.header-cta-btn');
-        const redPillBtn = document.querySelector('.hero-red-pill-btn');
-        
-        if (ctaBtn) {
-            ctaBtn.addEventListener('click', function(e) {
+        const scrollLinks = document.querySelectorAll('.header-cta-btn, .hero-cta-btn');
+
+        scrollLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                const href = link.getAttribute('href');
+                if (!href || href.charAt(0) !== '#') return;
+
                 e.preventDefault();
-                
-                const href = ctaBtn.getAttribute('href');
-                const targetId = href.replace('#', '');
-                const target = document.getElementById(targetId);
-                
-                if (target) {
-                    const headerHeight = 110;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
+                const target = document.getElementById(href.slice(1));
+                if (!target) return;
+
+                const headerHeight = 110;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
             });
-        }
-        
-        if (redPillBtn) {
-            redPillBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const href = redPillBtn.getAttribute('href');
-                const targetId = href.replace('#', '');
-                const target = document.getElementById(targetId);
-                
-                if (target) {
-                    const headerHeight = 110;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        }
+        });
     }
     
     // === Active Tab Highlight on Scroll ===
