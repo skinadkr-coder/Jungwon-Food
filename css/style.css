@@ -12,6 +12,8 @@
     --primary-red: #C83226;
     --primary-red-dark: #B02A1F;
     --primary-red-light: #D32F2F;
+    --primary-emerald: #C83226;
+    --primary-emerald-dark: #B02A1F;
     
     --secondary-navy: #111827;
     --secondary-charcoal: #1A202C;
@@ -1166,9 +1168,9 @@ body.drawer-open {
 }
 
 .btn-primary {
-    background: var(--primary-emerald);
-    color: var(--white);
-    border-color: var(--primary-emerald);
+    background: var(--primary-red);
+    color: #FFFFFF;
+    border-color: var(--primary-red);
 }
 
 .btn-primary:hover {
@@ -1823,6 +1825,7 @@ section {
 /* === Contact Section === */
 .contact-section {
     background: var(--white);
+    padding-bottom: 140px;
 }
 
 .contact-form {
@@ -1891,14 +1894,28 @@ section {
 
 .form-submit {
     text-align: center;
-    margin-top: var(--spacing-xl);
+    margin-top: var(--spacing-md);
+    margin-bottom: 24px;
+}
+
+.form-submit .btn {
+    display: block;
+    width: 100%;
+    background: #C83226;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 1.0625rem;
+    font-weight: 800;
+    box-shadow: 0 8px 20px rgba(200, 50, 38, 0.28);
 }
 
 /* === Footer === */
 .footer {
     background: var(--secondary-green-dark);
     color: var(--white);
-    padding: var(--spacing-xxl) 0 var(--spacing-lg);
+    padding: var(--spacing-xxl) 0 120px;
 }
 
 .footer-content {
@@ -2249,6 +2266,20 @@ section {
 @media (min-width: 768px) {
     .mobile-fixed-bar {
         display: none;
+    }
+
+    .contact-section {
+        padding-bottom: var(--spacing-xxl);
+    }
+
+    .footer {
+        padding-bottom: var(--spacing-lg);
+    }
+
+    .form-submit .btn {
+        display: inline-block;
+        width: auto;
+        min-width: 280px;
     }
 }
 

@@ -204,7 +204,7 @@
                 // 버튼 복구
                 if (submitBtn) {
                     submitBtn.disabled = false;
-                    submitBtn.textContent = '견적 문의하기';
+                    submitBtn.textContent = '견적 문의 접수하기';
                 }
                 
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -216,7 +216,7 @@
                 // 버튼 복구
                 if (submitBtn) {
                     submitBtn.disabled = false;
-                    submitBtn.textContent = '견적 문의하기';
+                    submitBtn.textContent = '견적 문의 접수하기';
                 }
             });
         });
