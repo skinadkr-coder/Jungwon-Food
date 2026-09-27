@@ -47,7 +47,9 @@
                     </div>
                 </a>
             </div>
-            <button class="hamburger" id="hamburger" aria-label="메뉴">
+            
+            <!-- 햄버거 메뉴 버튼 -->
+            <button class="menu-btn" id="menuToggle" aria-label="메뉴 열기">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -63,103 +65,53 @@
         </nav>
     </header>
 
-    <!-- Premium Mobile Side Drawer -->
-    <div class="drawer-overlay"></div>
-    <div class="mobile-drawer">
-        <!-- Drawer Header -->
+    <!-- 네비게이션 드로어 -->
+    <div class="nav-overlay" id="navOverlay"></div>
+    <nav class="nav-drawer" id="navDrawer">
         <div class="drawer-header">
             <div class="drawer-logo">
-                <div class="drawer-logo-emblem">
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="48" fill="url(#gradientGoldDrawer)" stroke="#E5C07B" stroke-width="2"/>
-                        <defs>
-                            <linearGradient id="gradientGoldDrawer" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#E5C07B;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        <path d="M50 25 Q35 35 35 50 Q35 65 50 75 Q65 65 65 50 Q65 35 50 25 Z" 
-                              fill="#2d6a4f" opacity="0.8"/>
-                        <path d="M50 30 Q40 38 40 50 Q40 62 50 70 Q60 62 60 50 Q60 38 50 30 Z" 
-                              fill="#40916c" opacity="0.6"/>
-                        <line x1="50" y1="30" x2="50" y2="70" stroke="#E5C07B" stroke-width="2"/>
-                    </svg>
-                </div>
-                <div class="drawer-logo-text">
-                    <div class="drawer-logo-main">정원푸드</div>
-                    <div class="drawer-logo-sub">JUNGWON FOOD</div>
-                </div>
+                <span class="drawer-logo-text">정원푸드</span>
+                <span class="drawer-logo-sub">JUNGWON FOOD</span>
             </div>
-            <button class="drawer-close-btn" aria-label="메뉴 닫기">✕</button>
+            <button class="drawer-close-btn" id="drawerClose" aria-label="메뉴 닫기">✕</button>
         </div>
         
-        <!-- Brand Badge -->
         <div class="drawer-badge">
-            <div class="drawer-badge-text">
-                30년 장인의 숨결 · K-KIMCHI GLOBAL LEADER
-            </div>
+            <span>🌿 30년 장인의 숨결 · K-KIMCHI GLOBAL LEADER</span>
         </div>
         
-        <!-- Navigation -->
-        <nav class="drawer-nav">
-            <ul class="drawer-nav-list">
-                <li class="drawer-nav-item">
-                    <a href="index.html" class="drawer-nav-link active">
-                        <span class="drawer-nav-icon">🏠</span>
-                        <span>홈</span>
-                    </a>
-                </li>
-                <li class="drawer-nav-item">
-                    <a href="about.html" class="drawer-nav-link">
-                        <span class="drawer-nav-icon">🏢</span>
-                        <span>회사소개</span>
-                    </a>
-                </li>
-                <li class="drawer-nav-item">
-                    <a href="about.html" class="drawer-nav-link">
-                        <span class="drawer-nav-icon">👨‍🍳</span>
-                        <span>명인 & 기술력</span>
-                    </a>
-                </li>
-                <li class="drawer-nav-item">
-                    <a href="products.html" class="drawer-nav-link">
-                        <span class="drawer-nav-icon">📦</span>
-                        <span>제품소개</span>
-                    </a>
-                </li>
-                <li class="drawer-nav-item">
-                    <a href="products.html" class="drawer-nav-link">
-                        <span class="drawer-nav-icon">🌍</span>
-                        <span>해외수출 · 납품</span>
-                    </a>
-                </li>
-                <li class="drawer-nav-item">
-                    <a href="contact.html" class="drawer-nav-link">
-                        <span class="drawer-nav-icon">✉️</span>
-                        <span>견적 · 상담문의</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <ul class="drawer-menu">
+            <li><a href="index.html" class="drawer-link active">
+                <span class="drawer-icon">🏠</span>
+                <span>홈</span>
+            </a></li>
+            <li><a href="about.html" class="drawer-link">
+                <span class="drawer-icon">🏢</span>
+                <span>회사소개</span>
+            </a></li>
+            <li><a href="products.html" class="drawer-link">
+                <span class="drawer-icon">📦</span>
+                <span>제품소개</span>
+            </a></li>
+            <li><a href="contact.html" class="drawer-link">
+                <span class="drawer-icon">✉️</span>
+                <span>견적문의</span>
+            </a></li>
+        </ul>
         
-        <!-- Footer Contact -->
         <div class="drawer-footer">
-            <a href="tel:1877-5923" class="drawer-contact-btn">
-                <span class="drawer-contact-icon">📞</span>
+            <a href="tel:1877-5923" class="drawer-call-btn">
+                <span>📞</span>
                 <span>대표전화 1877-5923</span>
             </a>
-            <div class="drawer-footer-info">
-                <div class="drawer-footer-address">
-                    충청북도 음성군 삼성면 금일로389번길 121-3
-                </div>
-                <div class="drawer-footer-label">
-                    B2B 대량납품 · 해외수출 전문
-                </div>
+            <div class="drawer-info">
+                <p>충청북도 음성군 삼성면 금일로389번길 121-3</p>
+                <p class="drawer-tag">B2B 대량납품 · 해외수출 전문</p>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <!-- Global High-End Hero Section -->
+    <!-- Global High-End Hero Section - Korean Kimchi Premium -->
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">

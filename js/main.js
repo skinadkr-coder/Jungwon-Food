@@ -5,7 +5,61 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // ===========================
-    // Premium Mobile Side Drawer
+    // 햄버거 메뉴 & 드로어 네비게이션
+    // ===========================
+    const menuToggle = document.getElementById('menuToggle');
+    const navDrawer = document.getElementById('navDrawer');
+    const navOverlay = document.getElementById('navOverlay');
+    const drawerClose = document.getElementById('drawerClose');
+    const body = document.body;
+    
+    // 드로어 열기
+    function openDrawer() {
+        navDrawer.classList.add('active');
+        navOverlay.classList.add('active');
+        body.classList.add('drawer-open');
+    }
+    
+    // 드로어 닫기
+    function closeDrawer() {
+        navDrawer.classList.remove('active');
+        navOverlay.classList.remove('active');
+        body.classList.remove('drawer-open');
+    }
+    
+    // 햄버거 버튼 클릭
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            openDrawer();
+        });
+    }
+    
+    // 닫기 버튼 클릭
+    if (drawerClose) {
+        drawerClose.addEventListener('click', closeDrawer);
+    }
+    
+    // 오버레이 클릭
+    if (navOverlay) {
+        navOverlay.addEventListener('click', closeDrawer);
+    }
+    
+    // 드로어 링크 클릭 시 닫기
+    const drawerLinks = document.querySelectorAll('.drawer-link');
+    drawerLinks.forEach(link => {
+        link.addEventListener('click', closeDrawer);
+    });
+    
+    // ESC 키로 닫기
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navDrawer.classList.contains('active')) {
+            closeDrawer();
+        }
+    });
+    
+    // ===========================
+    // Premium Mobile Side Drawer (Legacy - 제거됨)
     // ===========================
     const hamburger = document.getElementById('hamburger');
     const drawerOverlay = document.querySelector('.drawer-overlay');
