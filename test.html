@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>햄버거 메뉴 테스트</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: sans-serif;
+            background: #f0f0f0;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, #1A1A1A 0%, #2D2D2D 100%);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 1000;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        }
+        
+        .logo {
+            color: #D4AF37;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 32px;
+            height: 24px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+        
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #D4AF37, #E5C158);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, #1A1A1A 0%, #2D2D2D 100%);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            z-index: 999;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+        }
+        
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+            padding: 2rem 1.5rem;
+        }
+        
+        .mobile-menu li {
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        
+        .mobile-menu li:last-child {
+            border-bottom: none;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 1rem;
+            color: white;
+            text-decoration: none;
+            font-size: 1.125rem;
+            transition: color 0.3s;
+        }
+        
+        .mobile-menu a:hover {
+            color: #D4AF37;
+        }
+        
+        .content {
+            margin-top: 100px;
+            padding: 20px;
+        }
+        
+        .test-info {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .test-info h2 {
+            color: #1A1A1A;
+            margin-bottom: 10px;
+        }
+        
+        .test-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        #debug {
+            background: #000;
+            color: #0f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">정원푸드 TEST</div>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+    
+    <nav class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">홈</a></li>
+            <li><a href="about.html">회사소개</a></li>
+            <li><a href="products.html">제품소개</a></li>
+            <li><a href="contact.html">견적문의</a></li>
+        </ul>
+    </nav>
+    
+    <div class="content">
+        <div class="test-info">
+            <h2>🍔 햄버거 메뉴 테스트 페이지</h2>
+            <p><strong>햄버거 버튼을 클릭하세요!</strong></p>
+            <p>메뉴가 슬라이드로 내려와야 합니다.</p>
+        </div>
+        
+        <div class="test-info">
+            <h2>📱 디버그 로그</h2>
+            <div id="debug"></div>
+        </div>
+    </div>
+    
+    <script>
+        const debugDiv = document.getElementById('debug');
+        
+        function log(msg) {
+            const time = new Date().toLocaleTimeString();
+            debugDiv.innerHTML += `[${time}] ${msg}<br>`;
+            debugDiv.scrollTop = debugDiv.scrollHeight;
+            console.log(msg);
+        }
+        
+        log('=== 페이지 로드됨 ===');
+        
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        log('hamburger: ' + (hamburger ? 'OK' : 'NULL'));
+        log('mobileMenu: ' + (mobileMenu ? 'OK' : 'NULL'));
+        
+        if (hamburger && mobileMenu) {
+            hamburger.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                log('=== 햄버거 클릭! ===');
+                
+                hamburger.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                
+                log('hamburger.active: ' + hamburger.classList.contains('active'));
+                log('mobileMenu.active: ' + mobileMenu.classList.contains('active'));
+            });
+            
+            log('이벤트 리스너 등록 완료');
+        } else {
+            log('ERROR: 요소를 찾을 수 없음!');
+        }
+    </script>
+</body>
+</html>

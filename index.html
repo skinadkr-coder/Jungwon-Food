@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Premium Header -->
+    <!-- Clean White Header -->
     <header class="header">
         <div class="header-container">
             <div class="logo">
@@ -19,100 +19,44 @@
                     <!-- Logo Emblem -->
                     <div class="logo-emblem">
                         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Leaf Circle Emblem -->
-                            <circle cx="50" cy="50" r="48" fill="url(#gradientGreen)" stroke="#d4af37" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="48" fill="url(#gradientRed)" stroke="#C83226" stroke-width="2"/>
                             <defs>
-                                <linearGradient id="gradientGreen" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#2d6a4f;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#1b4332;stop-opacity:1" />
+                                <linearGradient id="gradientRed" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#D32F2F;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#C83226;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
-                            <!-- Traditional Leaf Pattern -->
                             <path d="M50 25 Q35 35 35 50 Q35 65 50 75 Q65 65 65 50 Q65 35 50 25 Z" 
-                                  fill="#E5C07B" opacity="0.8"/>
+                                  fill="#FFFFFF" opacity="0.95"/>
                             <path d="M50 30 Q40 38 40 50 Q40 62 50 70 Q60 62 60 50 Q60 38 50 30 Z" 
-                                  fill="#40916c" opacity="0.6"/>
-                            <line x1="50" y1="30" x2="50" y2="70" stroke="#d4af37" stroke-width="2"/>
-                            <path d="M50 40 Q45 45 50 50 Q55 45 50 40" fill="#fff" opacity="0.5"/>
-                            <path d="M50 50 Q45 55 50 60 Q55 55 50 50" fill="#fff" opacity="0.5"/>
+                                  fill="#FEF3C7" opacity="0.7"/>
+                            <line x1="50" y1="30" x2="50" y2="70" stroke="#FFFFFF" stroke-width="2"/>
                         </svg>
                     </div>
                     <!-- Logo Text -->
                     <div class="logo-text">
-                        <span class="logo-ko">정원푸드</span>
-                        <div class="logo-subtitle">
-                            <span class="logo-en">Jungwon Food Co., Ltd.</span>
-                            <span class="logo-tradition">30年 匠人傳統</span>
-                        </div>
+                        <span class="logo-ko">주식회사 <strong style="color: #C83226; font-weight: 900;">정원푸드</strong></span>
                     </div>
                 </a>
             </div>
             
-            <!-- 햄버거 메뉴 버튼 -->
-            <button class="menu-btn" id="menuToggle" aria-label="메뉴 열기">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <!-- CTA Button -->
+            <a href="#contact" class="header-cta-btn">견적 문의</a>
         </div>
-        <nav class="mobile-menu" id="mobileMenu">
-            <ul>
-                <li><a href="index.html" class="active">홈</a></li>
-                <li><a href="about.html">회사소개</a></li>
-                <li><a href="products.html">제품소개</a></li>
-                <li><a href="contact.html">견적문의</a></li>
-            </ul>
+        
+        <!-- Horizontal Pill Tab Menu -->
+        <nav class="sub-tab-nav">
+            <a href="#home" class="tab-chip active">홈</a>
+            <a href="#about" class="tab-chip">회사소개</a>
+            <a href="#master-greeting" class="tab-chip">명인&기술</a>
+            <a href="#products" class="tab-chip">제품소개</a>
+            <a href="#distribution" class="tab-chip">글로벌 유통</a>
+            <a href="#contact" class="tab-chip">견적문의</a>
         </nav>
     </header>
 
-    <!-- 네비게이션 드로어 -->
-    <div class="nav-overlay" id="navOverlay"></div>
-    <nav class="nav-drawer" id="navDrawer">
-        <div class="drawer-header">
-            <div class="drawer-logo">
-                <span class="drawer-logo-text">정원푸드</span>
-                <span class="drawer-logo-sub">JUNGWON FOOD</span>
-            </div>
-            <button class="drawer-close-btn" id="drawerClose" aria-label="메뉴 닫기">✕</button>
-        </div>
-        
-        <div class="drawer-badge">
-            <span>🌿 30년 장인의 숨결 · K-KIMCHI GLOBAL LEADER</span>
-        </div>
-        
-        <ul class="drawer-menu">
-            <li><a href="index.html" class="drawer-link active">
-                <span class="drawer-icon">🏠</span>
-                <span>홈</span>
-            </a></li>
-            <li><a href="about.html" class="drawer-link">
-                <span class="drawer-icon">🏢</span>
-                <span>회사소개</span>
-            </a></li>
-            <li><a href="products.html" class="drawer-link">
-                <span class="drawer-icon">📦</span>
-                <span>제품소개</span>
-            </a></li>
-            <li><a href="contact.html" class="drawer-link">
-                <span class="drawer-icon">✉️</span>
-                <span>견적문의</span>
-            </a></li>
-        </ul>
-        
-        <div class="drawer-footer">
-            <a href="tel:1877-5923" class="drawer-call-btn">
-                <span>📞</span>
-                <span>대표전화 1877-5923</span>
-            </a>
-            <div class="drawer-info">
-                <p>충청북도 음성군 삼성면 금일로389번길 121-3</p>
-                <p class="drawer-tag">B2B 대량납품 · 해외수출 전문</p>
-            </div>
-        </div>
-    </nav>
-
     <!-- Global High-End Hero Section - Korean Kimchi Premium -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <!-- Top Mini Badge -->
@@ -149,6 +93,45 @@
                     <span>신선 유지 특허 용기</span>
                 </div>
             </div>
+            
+            <!-- Hero CTA Button -->
+            <a href="#products" class="hero-red-pill-btn">제품소개</a>
+        </div>
+    </section>
+
+    <!-- Master Greeting Section -->
+    <section id="master-greeting" class="master-greeting">
+        <div class="container">
+            <div class="master-content">
+                <div class="master-image">
+                    <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=800&q=80" alt="채남기 대표">
+                    <div class="master-badge">
+                        <span class="badge-year">Since 1994</span>
+                        <span class="badge-title">장인</span>
+                    </div>
+                </div>
+                <div class="master-text">
+                    <h2 class="master-headline">30년 세월,<br>변치 않는 고집으로<br>빚어낸 한국의 맛</h2>
+                    <div class="master-quote">
+                        <p>"김치는 단순한 발효 식품이 아닙니다.<br>
+                        한국의 정신이자, 어머니의 손맛이며,<br>
+                        세대를 잇는 문화의 결정체입니다."</p>
+                        <p class="quote-detail">
+                        30년 넘게 오직 정통 김치 발효에만 매진해 온 정원푸드는<br>
+                        까다로운 북미 시장에 당당히 진출한 대한민국 중견 김치 기업입니다.<br>
+                        변함없는 장인 정신으로 세계인의 식탁을 책임지겠습니다.
+                        </p>
+                    </div>
+                    <div class="master-signature">
+                        <div class="signature-text">채남기 / 최재혁</div>
+                        <div class="signature-title">
+                            <span>채남기 생산총괄대표이사</span>
+                            <span class="title-divider">·</span>
+                            <span>최재혁 관리총괄대표이사</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -162,20 +145,88 @@
                 최상의 김치를 생산합니다.
             </p>
             <div class="intro-features">
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h3>30년 전통</h3>
-                    <p>장인 정신과<br>제조 노하우</p>
+                <div class="intro-item intro-item-tradition">
+                    <div class="intro-overlay"></div>
+                    <div class="intro-content">
+                        <div class="intro-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="4"/>
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+                            </svg>
+                        </div>
+                        <h3>30년 전통</h3>
+                        <p>1994년부터 이어온<br>장인 정신과 제조 노하우</p>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🌍</div>
-                    <h3>해외 수출</h3>
-                    <p>미국·캐나다<br>수출 실적</p>
+                <div class="intro-item intro-item-export">
+                    <div class="intro-overlay"></div>
+                    <div class="intro-content">
+                        <div class="intro-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <h3>해외 수출</h3>
+                        <p>미국·캐나다 등<br>북미 시장 정식 수출</p>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">❄️</div>
-                    <h3>저온발효 기술</h3>
-                    <p>묵은지·숙성지<br>특화 기술</p>
+                <div class="intro-item intro-item-tech">
+                    <div class="intro-overlay"></div>
+                    <div class="intro-content">
+                        <div class="intro-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v10l6 4"/>
+                                <path d="M6 14l6 4v4"/>
+                                <path d="M2 12h4"/>
+                            </svg>
+                        </div>
+                        <h3>저온발효 기술</h3>
+                        <p>국내 최고 수준<br>묵은지·숙성지 특화 기술</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Location & Contact Info -->
+            <div class="location-section">
+                <h3 class="location-title">찾아오시는 길 & 제조 시설</h3>
+                
+                <!-- Factory Image -->
+                <div class="factory-image">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=80" 
+                         alt="정원푸드 김치 제조공장 외부 전경" 
+                         class="factory-photo">
+                    <div class="factory-badge">JUNGWON FOOD FACTORY</div>
+                </div>
+                
+                <div class="location-card">
+                    <div class="location-info">
+                        <div class="info-row">
+                            <span class="info-label">공장 주소</span>
+                            <span class="info-value">충청북도 음성군 삼성면 금율로389번길 121-3</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">대표전화</span>
+                            <span class="info-value">1877-5923</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">이메일</span>
+                            <span class="info-value">contact@jungwonfood.com</span>
+                        </div>
+                        <div class="visit-notice">
+                            <strong>🏭 공장 방문 안내</strong>
+                            <p>대량 납품 및 수출 바이어 분들을 위한 현장 상담은<br>
+                            <strong>사전 예약제</strong>로 운영됩니다. (전화 예약 필수)</p>
+                        </div>
+                        <div class="location-buttons">
+                            <a href="https://map.kakao.com/link/map/정원푸드,36.6403,127.6729" target="_blank" class="location-btn kakao">
+                                카카오맵 길찾기
+                            </a>
+                            <a href="https://map.naver.com/v5/search/충북 음성군 삼성면 금율로389번길 121-3" target="_blank" class="location-btn naver">
+                                네이버 지도
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -331,27 +382,51 @@
     </section>
 
     <!-- Distribution Section -->
-    <section class="distribution">
+    <section id="distribution" class="distribution">
         <div class="container">
             <h2 class="section-title">유통 및 글로벌 수출</h2>
             <div class="distribution-grid">
-                <div class="dist-card">
-                    <div class="dist-icon">🏢</div>
+                <div class="dist-item">
+                    <div class="dist-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                    </div>
                     <h3>프랜차이즈 납품</h3>
                     <p>국내 유명 대형 프랜차이즈 정기 공급</p>
                 </div>
-                <div class="dist-card">
-                    <div class="dist-icon">🏪</div>
+                <div class="dist-item">
+                    <div class="dist-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"/>
+                            <rect x="14" y="3" width="7" height="7"/>
+                            <rect x="14" y="14" width="7" height="7"/>
+                            <rect x="3" y="14" width="7" height="7"/>
+                        </svg>
+                    </div>
                     <h3>식자재 도매</h3>
                     <p>전국 도매 업체 대량 납품</p>
                 </div>
-                <div class="dist-card">
-                    <div class="dist-icon">🛒</div>
+                <div class="dist-item">
+                    <div class="dist-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                    </div>
                     <h3>온라인몰</h3>
                     <p>김치광장 직접 판매</p>
                 </div>
-                <div class="dist-card">
-                    <div class="dist-icon">🌍</div>
+                <div class="dist-item">
+                    <div class="dist-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </div>
                     <h3>해외 수출</h3>
                     <p>미국·캐나다 수출 실적</p>
                 </div>
@@ -446,18 +521,21 @@
         </div>
     </footer>
 
-    <!-- Fresh Floating Quick Action Bar -->
-    <!-- Slim Premium Floating Action Bar -->
+    <!-- Mobile Bottom Fixed Quick Action Bar -->
     <div class="mobile-fixed-bar">
         <a href="tel:1877-5923" class="fixed-bar-btn call-btn">
-            <span class="icon">📞</span>
-            <span class="text">전화상담</span>
-            <small>1877-5923</small>
+            <span class="btn-icon">📞</span>
+            <div class="btn-content">
+                <span class="btn-label">전화상담</span>
+                <span class="btn-detail">1877-5923</span>
+            </div>
         </a>
-        <a href="contact.html" class="fixed-bar-btn quote-btn">
-            <span class="icon">✉️</span>
-            <span class="text">수출·대량납품</span>
-            <small>견적문의</small>
+        <a href="#contact" class="fixed-bar-btn quote-btn">
+            <span class="btn-icon">✉️</span>
+            <div class="btn-content">
+                <span class="btn-label">수출·대량납품</span>
+                <span class="btn-detail">문의하기</span>
+            </div>
         </a>
     </div>
 
