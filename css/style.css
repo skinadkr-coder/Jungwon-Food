@@ -194,10 +194,10 @@ button {
 }
 
 .logo-ko {
-    font-size: 1.375rem;
+    font-size: 1.75rem;
     font-weight: var(--font-weight-black);
     color: var(--text-midnight);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.035em;
     line-height: 1;
 }
 
@@ -219,8 +219,13 @@ button {
 }
 
 /* Header CTA Button */
+.header-actions,
 .header-cta-btn {
-    display: inline-flex;
+    display: none !important;
+}
+
+.header-cta-btn {
+    display: none;
     align-items: center;
     padding: 0.625rem 1.25rem;
     background: linear-gradient(135deg, #C83226, #D32F2F);
@@ -237,17 +242,18 @@ button {
 
 @media (max-width: 1023px) {
     .header-container {
-        height: 56px;
-        padding: 0 12px 0 14px;
+        height: 64px;
+        padding: 0 16px;
+        justify-content: flex-start;
     }
 
     .logo-emblem {
-        width: 38px;
-        height: 38px;
+        width: 44px;
+        height: 44px;
     }
 
     .logo-ko {
-        font-size: 1.5rem;
+        font-size: 1.85rem;
         font-weight: 900;
         letter-spacing: -0.04em;
     }
@@ -582,12 +588,12 @@ body.menu-open {
 }
 
 .logo-ko {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     font-weight: var(--font-weight-black);
-    color: var(--secondary-gold);
-    letter-spacing: 0.05em;
+    color: var(--text-midnight);
+    letter-spacing: -0.035em;
     line-height: 1;
-    text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+    text-shadow: none;
 }
 
 .logo-subtitle {
@@ -3322,7 +3328,7 @@ section {
     }
     
     .logo-ko {
-        font-size: 1.5rem;
+        font-size: 1.85rem;
     }
     
     .header-container {
@@ -3505,7 +3511,10 @@ section {
     }
     
     .logo-ko {
-        font-size: 1.625rem;
+        font-size: 2.2rem;
+        color: #111827;
+        letter-spacing: -0.04em;
+        text-shadow: none;
     }
     
     .header-container {
@@ -3781,22 +3790,24 @@ section {
     }
 
     .header-container {
-        height: 56px;
-        padding: 0 12px 0 14px;
+        height: 64px;
+        padding: 0 16px;
+        justify-content: flex-start;
     }
 
     .header .logo-emblem {
-        width: 36px;
-        height: 36px;
+        width: 46px;
+        height: 46px;
     }
 
     .header .logo-ko {
-        font-size: clamp(1.2rem, 4.8vw, 1.55rem);
+        font-size: clamp(1.85rem, 8.4vw, 2.25rem);
         font-weight: 900;
         color: #111827;
-        letter-spacing: -0.045em;
+        letter-spacing: -0.05em;
         text-shadow: none;
-        line-height: 1.1;
+        line-height: 1.05;
+        white-space: nowrap;
     }
 
     .header .header-cta-btn {
@@ -3829,7 +3840,7 @@ section {
     }
 
     .hero {
-        margin-top: 102px;
+        margin-top: 118px;
         min-height: 68svh;
     }
 
@@ -3838,7 +3849,7 @@ section {
     }
 
     .page-shell {
-        margin-top: 102px;
+        margin-top: 118px;
     }
 }
 
@@ -3953,4 +3964,62 @@ body.page-about {
 
 .page-about .dist-item:hover {
     border-bottom-color: #D4AF37;
+}
+
+/* === Contact page: inquiry first, directions last === */
+.page-contact .contact-section {
+    background: #FFFFFF;
+    padding-bottom: 48px;
+}
+
+.page-contact .directions-section {
+    margin-top: 0;
+    padding-top: 56px;
+    padding-bottom: 148px;
+    border-top: 1px solid #E8E2DA;
+    background: #F4F1EC;
+}
+
+.page-contact .directions-section .section-title {
+    color: #111827;
+}
+
+.page-contact .directions-factory {
+    position: relative;
+    width: 100%;
+    min-height: 280px;
+    aspect-ratio: 16 / 9;
+    max-height: 460px;
+    margin: 0 0 28px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #2A2420;
+    box-shadow: 0 8px 28px rgba(22, 16, 16, 0.16);
+}
+
+.page-contact .directions-factory img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.page-contact .directions-factory .factory-badge {
+    bottom: 16px;
+    left: 16px;
+}
+
+@media (min-width: 768px) {
+    .page-contact .contact-section {
+        padding-bottom: 56px;
+    }
+
+    .page-contact .directions-section {
+        padding-bottom: 80px;
+    }
+
+    .page-contact .directions-factory {
+        min-height: 380px;
+        max-height: 520px;
+    }
 }
