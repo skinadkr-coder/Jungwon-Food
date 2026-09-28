@@ -5,18 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="주식회사 정원푸드 - 30년 전통의 김치 생산 전문 기업, 해외수출 중견 김치공장">
     <title>주식회사 정원푸드 | Jungwon Food Co., Ltd.</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=20260929c">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Clean White Header -->
     <header class="header">
         <div class="header-container">
             <div class="logo">
                 <a href="index.html">
-                    <!-- Logo Emblem -->
                     <div class="logo-emblem">
                         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="50" cy="50" r="48" fill="url(#gradientRed)" stroke="#C83226" stroke-width="2"/>
@@ -26,56 +24,58 @@
                                     <stop offset="100%" style="stop-color:#C83226;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
-                            <path d="M50 25 Q35 35 35 50 Q35 65 50 75 Q65 65 65 50 Q65 35 50 25 Z" 
-                                  fill="#FFFFFF" opacity="0.95"/>
-                            <path d="M50 30 Q40 38 40 50 Q40 62 50 70 Q60 62 60 50 Q60 38 50 30 Z" 
-                                  fill="#FEF3C7" opacity="0.7"/>
+                            <path d="M50 25 Q35 35 35 50 Q35 65 50 75 Q65 65 65 50 Q65 35 50 25 Z" fill="#FFFFFF" opacity="0.95"/>
+                            <path d="M50 30 Q40 38 40 50 Q40 62 50 70 Q60 62 60 50 Q60 38 50 30 Z" fill="#FEF3C7" opacity="0.7"/>
                             <line x1="50" y1="30" x2="50" y2="70" stroke="#FFFFFF" stroke-width="2"/>
                         </svg>
                     </div>
-                    <!-- Logo Text -->
                     <div class="logo-text">
                         <span class="logo-ko">주식회<span class="logo-sa-mark">사</span> <strong style="color: #C83226; font-weight: 900;">정원푸드</strong></span>
                     </div>
                 </a>
             </div>
-            
-            <!-- CTA Button -->
-            <a href="#contact" class="header-cta-btn">견적 문의</a>
+            <div class="header-actions">
+                <a href="contact.html" class="header-cta-btn">견적 문의</a>
+                <button class="hamburger" id="hamburger" type="button" aria-label="메뉴" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
-        
-        <!-- Horizontal Pill Tab Menu -->
-        <nav class="sub-tab-nav">
-            <a href="#home" class="tab-chip active">홈</a>
-            <a href="#about" class="tab-chip">회사소개</a>
-            <a href="#master-greeting" class="tab-chip">명인&기술</a>
-            <a href="#products" class="tab-chip">제품소개</a>
-            <a href="#distribution" class="tab-chip">글로벌 유통</a>
-            <a href="#contact" class="tab-chip">견적문의</a>
+        <nav class="sub-tab-nav" aria-label="주요 메뉴">
+            <a href="index.html" class="tab-chip">홈</a>
+            <a href="about.html" class="tab-chip">회사소개</a>
+            <a href="products.html" class="tab-chip">제품소개</a>
+            <a href="facility.html" class="tab-chip">시설/위생</a>
+            <a href="contact.html" class="tab-chip">문의/위치</a>
         </nav>
     </header>
 
-    <!-- Premium Hero — restrained editorial layout -->
-    <section class="hero" id="home">
+    <div class="site-menu-overlay" id="menuOverlay"></div>
+    <nav class="site-menu-panel" id="mobileMenuPanel" aria-label="모바일 메뉴">
+        <a href="index.html" class="site-menu-link">홈</a>
+        <a href="about.html" class="site-menu-link">회사소개</a>
+        <a href="products.html" class="site-menu-link">제품소개</a>
+        <a href="facility.html" class="site-menu-link">시설/위생</a>
+        <a href="contact.html" class="site-menu-link">문의/위치</a>
+    </nav>
+
+    <section class="hero">
         <div class="hero-content">
             <p class="hero-mini-badge">SINCE 1994 · 30 YEARS OF ARTISAN FERMENTATION</p>
-
             <h1 class="hero-title">
                 <span class="hero-title-main">30년 장인의 숨결</span>
                 <span class="hero-title-main">세계를 <span class="hero-title-accent">감동시키는</span> 대한민국 묵은지</span>
             </h1>
-
             <p class="hero-subcopy">
                 특허급 저온 발효 숙성 기술과 북미 수출 특화 안심 용기 시스템.<br>
                 정원푸드가 K-FOOD의 글로벌 표준을 만듭니다.
             </p>
-
             <div class="hero-cta-stack">
-                <a href="#products" class="hero-cta-btn hero-cta-primary">
+                <a href="products.html" class="hero-cta-btn hero-cta-primary">
                     <span class="hero-cta-icon" aria-hidden="true">🥬</span>
                     <span>30년 전통 묵은지 라인업 보기</span>
                 </a>
-                <a href="#contact" class="hero-cta-btn hero-cta-secondary">
+                <a href="contact.html" class="hero-cta-btn hero-cta-secondary">
                     <span class="hero-cta-icon" aria-hidden="true">📦</span>
                     <span>해외 수출 및 대량납품 상담</span>
                 </a>
@@ -83,61 +83,17 @@
         </div>
     </section>
 
-    <!-- Master Greeting Section -->
-    <section id="master-greeting" class="master-greeting">
-        <div class="container">
-            <div class="master-content">
-                <div class="master-image">
-                    <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=800&q=80" alt="채남기 대표">
-                    <div class="master-badge">
-                        <span class="badge-year">Since 1994</span>
-                        <span class="badge-title">장인</span>
-                    </div>
-                </div>
-                <div class="master-text">
-                    <h2 class="master-headline">30년 세월,<br>변치 않는 고집으로<br>빚어낸 한국의 맛</h2>
-                    <div class="master-quote">
-                        <p>"김치는 단순한 발효 식품이 아닙니다.<br>
-                        한국의 정신이자, 어머니의 손맛이며,<br>
-                        세대를 잇는 문화의 결정체입니다."</p>
-                        <p class="quote-detail">
-                        30년 넘게 오직 정통 김치 발효에만 매진해 온 정원푸드는<br>
-                        까다로운 북미 시장에 당당히 진출한 대한민국 중견 김치 기업입니다.<br>
-                        변함없는 장인 정신으로 세계인의 식탁을 책임지겠습니다.
-                        </p>
-                    </div>
-                    <div class="master-signature">
-                        <div class="signature-text">채남기 / 최재혁</div>
-                        <div class="signature-title">
-                            <span>채남기 생산총괄대표이사</span>
-                            <span class="title-divider">·</span>
-                            <span>최재혁 관리총괄대표이사</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
+    <section class="about home-teaser">
         <div class="container">
             <h2 class="section-title">주식회사 정원푸드</h2>
             <p class="section-desc">
                 30년 경력의 김치생산 장인 채남기 대표의 노하우와<br>
-                국내 최고 수준의 저온발효 기술로<br>
-                최상의 김치를 생산합니다.
+                국내 최고 수준의 저온발효 기술로 최상의 김치를 생산합니다.
             </p>
             <div class="intro-features">
                 <div class="intro-item intro-item-tradition">
                     <div class="intro-overlay"></div>
                     <div class="intro-content">
-                        <div class="intro-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="8" r="4"/>
-                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
-                            </svg>
-                        </div>
                         <h3>30년 전통</h3>
                         <p>1994년부터 이어온<br>장인 정신과 제조 노하우</p>
                     </div>
@@ -145,12 +101,6 @@
                 <div class="intro-item intro-item-export">
                     <div class="intro-overlay"></div>
                     <div class="intro-content">
-                        <div class="intro-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                            </svg>
-                        </div>
                         <h3>해외 수출</h3>
                         <p>미국·캐나다 등<br>북미 시장 정식 수출</p>
                     </div>
@@ -158,403 +108,22 @@
                 <div class="intro-item intro-item-tech">
                     <div class="intro-overlay"></div>
                     <div class="intro-content">
-                        <div class="intro-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2v10l6 4"/>
-                                <path d="M6 14l6 4v4"/>
-                                <path d="M2 12h4"/>
-                            </svg>
-                        </div>
                         <h3>저온발효 기술</h3>
                         <p>국내 최고 수준<br>묵은지·숙성지 특화 기술</p>
                     </div>
                 </div>
             </div>
-            
-            <!-- Location & Contact Info -->
-            <div class="location-section">
-                <h3 class="location-title">찾아오시는 길 & 제조 시설</h3>
-                
-                <!-- Factory Image -->
-                <div class="factory-image">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=80" 
-                         alt="정원푸드 김치 제조공장 외부 전경" 
-                         class="factory-photo">
-                    <div class="factory-badge">JUNGWON FOOD FACTORY</div>
-                </div>
-                
-                <div class="location-card">
-                    <div class="location-info">
-                        <div class="info-row">
-                            <span class="info-label">공장 주소</span>
-                            <span class="info-value">충청북도 음성군 삼성면 금율로389번길 121-3</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">대표전화</span>
-                            <span class="info-value">1877-5923</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">이메일</span>
-                            <span class="info-value">contact@jungwonfood.com</span>
-                        </div>
-                        <div class="visit-notice">
-                            <strong>🏭 공장 방문 안내</strong>
-                            <p>대량 납품 및 수출 바이어 분들을 위한 현장 상담은<br>
-                            <strong>사전 예약제</strong>로 운영됩니다. (전화 예약 필수)</p>
-                        </div>
-                        <div class="location-buttons">
-                            <a href="https://map.kakao.com/link/map/정원푸드,36.6403,127.6729" target="_blank" class="location-btn kakao">
-                                카카오맵 길찾기
-                            </a>
-                            <a href="https://map.naver.com/v5/search/충북 음성군 삼성면 금율로389번길 121-3" target="_blank" class="location-btn naver">
-                                네이버 지도
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Master Craftsman Section -->
-    <section class="craftsman">
+    <section class="cta-section">
         <div class="container">
-            <div class="craftsman-content">
-                <div class="craftsman-image">
-                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=80" alt="장인의 손길">
-                </div>
-                <div class="craftsman-text">
-                    <h2>30년 경력의 김치생산 장인</h2>
-                    <h3 class="craftsman-name">채남기 생산총괄 대표</h3>
-                    <p>
-                        유명 셰프들의 극찬을 받아온 채남기 대표는 30년간 김치 제조 일선에서
-                        전통의 맛을 지켜왔습니다. 수많은 제자를 양성하며 김치 제조 기술의
-                        전승과 발전에 기여해온 산증인입니다.
-                    </p>
-                    <ul class="craftsman-features">
-                        <li>✓ 30년 경력의 김치 제조 전문가</li>
-                        <li>✓ 유명 셰프 극찬 및 인정</li>
-                        <li>✓ 다수의 제자 양성 및 기술 전수</li>
-                        <li>✓ 전통 김치 제조법 계승</li>
-                    </ul>
-                </div>
-            </div>
+            <h2>회사 이야기와 생산 시설을 확인해 보세요</h2>
+            <p>장인 정신, HACCP 위생 체계, B2B 납품 상담까지 한곳에서 안내합니다</p>
+            <a href="about.html" class="btn btn-primary">회사소개 보기</a>
         </div>
     </section>
 
-    <!-- Core Technology Section -->
-    <section class="technology">
-        <div class="container">
-            <h2 class="section-title">정원푸드 핵심 기술</h2>
-            <p class="section-desc">국내 최고 수준의 김치 제조 기술력을 보유하고 있습니다</p>
-            
-            <div class="tech-cards">
-                <div class="tech-card">
-                    <div class="tech-icon">❄️</div>
-                    <h3>저온발효 기술</h3>
-                    <p>
-                        국내 최고 수준의 묵은지·숙성지 저온발효 기술을 보유하고 있습니다.
-                        정밀한 온도와 습도 관리로 김치의 깊은 맛과 풍미를 완벽하게 구현합니다.
-                    </p>
-                </div>
-                <div class="tech-card">
-                    <div class="tech-icon">📦</div>
-                    <h3>포장용기 접목 기술</h3>
-                    <p>
-                        해외수출 및 장기보관에 특화된 포장용기 기술을 적용합니다.
-                        김치의 신선도를 장기간 유지하며 운송 중에도 최상의 품질을 보장합니다.
-                    </p>
-                </div>
-                <div class="tech-card">
-                    <div class="tech-icon">🌍</div>
-                    <h3>수출 특화 기술</h3>
-                    <p>
-                        미국, 캐나다 등 해외 시장을 위한 특화된 제조 및 포장 기술을
-                        개발하여 전세계에 한국 김치의 우수성을 알리고 있습니다.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="products-section">
-        <div class="container">
-            <h2 class="section-title">주력 제품</h2>
-            <p class="section-desc">정원푸드의 엄선된 김치 제품을 만나보세요</p>
-            
-            <div class="products-grid">
-                <!-- 묵은지 -->
-                <div class="product-card signature">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d87a48?w=800&q=80" alt="묵은지">
-                        <div class="product-badge">시그니처</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>묵은지 (숙성김치)</h3>
-                        <p>국내 최고 수준의 저온발효 기술로 깊고 진한 맛을 완성</p>
-                    </div>
-                </div>
-                
-                <!-- 포기김치 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?w=800&q=80" alt="포기김치">
-                    </div>
-                    <div class="product-info">
-                        <h3>포기김치</h3>
-                        <p>신선한 배추와 엄선된 양념으로 만든 전통 포기김치</p>
-                    </div>
-                </div>
-                
-                <!-- 열무김치 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=800&q=80" alt="열무김치">
-                    </div>
-                    <div class="product-info">
-                        <h3>열무김치</h3>
-                        <p>시원하고 아삭한 여름철 별미</p>
-                    </div>
-                </div>
-                
-                <!-- 갓김치 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1604908815884-65516d59cee4?w=800&q=80" alt="갓김치">
-                    </div>
-                    <div class="product-info">
-                        <h3>갓김치</h3>
-                        <p>매콤하고 알싸한 풍미가 일품</p>
-                    </div>
-                </div>
-                
-                <!-- 깍두기 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=800&q=80" alt="깍두기">
-                    </div>
-                    <div class="product-info">
-                        <h3>깍두기</h3>
-                        <p>아삭한 무의 식감과 깔끔한 맛</p>
-                    </div>
-                </div>
-                
-                <!-- 총각김치 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=800&q=80" alt="총각김치">
-                    </div>
-                    <div class="product-info">
-                        <h3>총각김치</h3>
-                        <p>아삭하고 시원한 맛의 총각무김치</p>
-                    </div>
-                </div>
-                
-                <!-- 백김치 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80" alt="백김치">
-                    </div>
-                    <div class="product-info">
-                        <h3>백김치</h3>
-                        <p>담백하고 시원한 국물 백김치</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Product List Table -->
-            <div class="product-list-section">
-                <h3 class="product-list-title">전체 생산 제품 목록</h3>
-                
-                <div class="product-table-wrapper">
-                    <table class="product-table">
-                        <thead>
-                            <tr>
-                                <th>제품명</th>
-                                <th>규격/용량</th>
-                                <th>특징</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="highlight">
-                                <td><strong>묵은지 (숙성김치)</strong></td>
-                                <td>3kg, 5kg, 10kg</td>
-                                <td><span class="badge-signature">시그니처</span> 저온발효 숙성</td>
-                            </tr>
-                            <tr>
-                                <td>포기김치</td>
-                                <td>3kg, 5kg, 10kg</td>
-                                <td>전통 방식 배추김치</td>
-                            </tr>
-                            <tr>
-                                <td>열무김치</td>
-                                <td>3kg, 5kg, 10kg</td>
-                                <td>여름철 별미</td>
-                            </tr>
-                            <tr>
-                                <td>갓김치</td>
-                                <td>3kg, 5kg, 10kg</td>
-                                <td>매콤한 풍미</td>
-                            </tr>
-                            <tr>
-                                <td>깍두기</td>
-                                <td>3kg, 5kg, 10kg</td>
-                                <td>아삭한 식감</td>
-                            </tr>
-                            <tr>
-                                <td>총각김치</td>
-                                <td>3kg, 5kg, 10kg</td>
-                                <td>시원한 맛</td>
-                            </tr>
-                            <tr>
-                                <td>백김치</td>
-                                <td>3kg, 5kg, 10kg</td>
-                                <td>담백한 국물김치</td>
-                            </tr>
-                            <tr>
-                                <td>파김치</td>
-                                <td>1kg, 2kg, 3kg</td>
-                                <td>파의 향긋함</td>
-                            </tr>
-                            <tr>
-                                <td>오이소박이</td>
-                                <td>3kg, 5kg, 10kg</td>
-                                <td>여름철 인기</td>
-                            </tr>
-                            <tr>
-                                <td>부추김치</td>
-                                <td>3kg, 5kg, 10kg</td>
-                                <td>향긋한 부추향</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <div class="product-note">
-                    <p><strong>📦 대량 주문 안내</strong></p>
-                    <p>프랜차이즈, 단체급식, 수출용 대량 주문은 별도 협의 가능합니다.</p>
-                    <p>맞춤형 용기 및 규격 제작도 상담 가능합니다.</p>
-                    <a href="#contact" class="note-link">견적 문의하기 →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Distribution Section -->
-    <section id="distribution" class="distribution">
-        <div class="container">
-            <h2 class="section-title">유통 및 글로벌 수출</h2>
-            <div class="distribution-grid">
-                <div class="dist-item">
-                    <div class="dist-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                            <polyline points="9 22 9 12 15 12 15 22"/>
-                        </svg>
-                    </div>
-                    <h3>프랜차이즈 납품</h3>
-                    <p>국내 유명 대형 프랜차이즈 정기 공급</p>
-                </div>
-                <div class="dist-item">
-                    <div class="dist-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="7" height="7"/>
-                            <rect x="14" y="3" width="7" height="7"/>
-                            <rect x="14" y="14" width="7" height="7"/>
-                            <rect x="3" y="14" width="7" height="7"/>
-                        </svg>
-                    </div>
-                    <h3>식자재 도매</h3>
-                    <p>전국 도매 업체 대량 납품</p>
-                </div>
-                <div class="dist-item">
-                    <div class="dist-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="9" cy="21" r="1"/>
-                            <circle cx="20" cy="21" r="1"/>
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-                        </svg>
-                    </div>
-                    <h3>온라인몰</h3>
-                    <p>김치광장 직접 판매</p>
-                </div>
-                <div class="dist-item">
-                    <div class="dist-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="2" y1="12" x2="22" y2="12"/>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                        </svg>
-                    </div>
-                    <h3>해외 수출</h3>
-                    <p>미국·캐나다 수출 실적</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">B2B 대량납품 및 수출 견적 문의</h2>
-            <p class="section-desc">프랜차이즈, 단체급식, 도매, 해외수출 상담을 도와드립니다</p>
-            
-            <form class="contact-form" id="contactForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="company">회사명 *</label>
-                        <input type="text" id="company" name="company" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="name">담당자명 *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">이메일 *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">연락처 *</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="010-0000-0000">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="inquiry-type">문의 유형 *</label>
-                    <select id="inquiry-type" name="inquiry-type" required>
-                        <option value="">선택해주세요</option>
-                        <option value="프랜차이즈">프랜차이즈 납품</option>
-                        <option value="단체급식">단체급식 납품</option>
-                        <option value="도매">도매 공급</option>
-                        <option value="수출">해외 수출</option>
-                        <option value="기타">기타</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">상세 문의 내용 *</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="납품 희망 시기, 배송지 정보, 특별 요구사항 등을 자세히 적어주세요"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="checkbox-label privacy">
-                        <input type="checkbox" id="privacy" name="privacy" required>
-                        <span>개인정보 수집 및 이용에 동의합니다 *</span>
-                    </label>
-                </div>
-
-                <div class="form-submit">
-                    <button type="submit" class="btn btn-primary btn-large">견적 문의 접수하기</button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -576,7 +145,6 @@
         </div>
     </footer>
 
-    <!-- Mobile Bottom Fixed Quick Action Bar -->
     <div class="mobile-fixed-bar">
         <a href="tel:1877-5923" class="fixed-bar-btn call-btn">
             <span class="btn-icon">📞</span>
@@ -585,7 +153,7 @@
                 <span class="btn-detail">1877-5923</span>
             </div>
         </a>
-        <a href="#contact" class="fixed-bar-btn quote-btn">
+        <a href="contact.html" class="fixed-bar-btn quote-btn">
             <span class="btn-icon">✉️</span>
             <div class="btn-content">
                 <span class="btn-label">수출·대량납품</span>
@@ -594,6 +162,6 @@
         </a>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=20260929c"></script>
 </body>
 </html>
