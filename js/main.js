@@ -12,7 +12,6 @@
 
     function init() {
         setupActiveNav();
-        setupMobileMenuToggle();
         setupHeaderScroll();
         setupDesktopTabAlign();
         setupContactForm();
@@ -28,7 +27,7 @@
 
     function setupActiveNav() {
         var file = currentPageFile();
-        var links = document.querySelectorAll('.tab-chip, .site-menu-link');
+        var links = document.querySelectorAll('.tab-chip');
 
         links.forEach(function(link) {
             var href = (link.getAttribute('href') || '').split('?')[0].split('#')[0].toLowerCase();
@@ -38,43 +37,6 @@
                 link.classList.remove('active');
             }
         });
-    }
-
-    function setupMobileMenuToggle() {
-        var hamburger = document.getElementById('hamburger');
-        var panel = document.getElementById('mobileMenuPanel');
-        var overlay = document.getElementById('menuOverlay');
-        if (!hamburger || !panel || !overlay) return;
-
-        function isOpen() {
-            return panel.classList.contains('is-open');
-        }
-
-        function openMenu() {
-            hamburger.classList.add('active');
-            hamburger.setAttribute('aria-expanded', 'true');
-            panel.classList.add('is-open');
-            overlay.classList.add('is-open');
-            document.body.classList.add('menu-open');
-        }
-
-        function closeMenu() {
-            hamburger.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
-            panel.classList.remove('is-open');
-            overlay.classList.remove('is-open');
-            document.body.classList.remove('menu-open');
-        }
-
-        hamburger.addEventListener('click', function() {
-            if (isOpen()) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
-        });
-
-        overlay.addEventListener('click', closeMenu);
     }
 
     function setupDesktopTabAlign() {

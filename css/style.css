@@ -501,17 +501,15 @@ body.menu-open {
     overflow: hidden;
 }
 
-@media (min-width: 1024px) {
-    .hamburger,
-    .site-menu-overlay,
-    .site-menu-panel {
-        display: none !important;
-    }
+.hamburger,
+.site-menu-overlay,
+.site-menu-panel {
+    display: none !important;
 }
 
 /* === Horizontal Pill Tab Navigation === */
 .sub-tab-nav {
-    display: none !important;
+    display: flex !important;
     gap: 8px;
     overflow-x: auto;
     overflow-y: hidden;
@@ -3810,15 +3808,28 @@ section {
         letter-spacing: -0.02em;
     }
 
-    .header .hamburger {
-        width: 36px;
-        height: 36px;
-        z-index: 1201;
-        position: relative;
+    .header .hamburger,
+    .hamburger,
+    .site-menu-overlay,
+    .site-menu-panel {
+        display: none !important;
+    }
+
+    .sub-tab-nav {
+        display: flex !important;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 12px 10px;
+    }
+
+    .tab-chip {
+        padding: 6px 12px;
+        font-size: 0.8125rem;
+        border-radius: 999px;
     }
 
     .hero {
-        margin-top: 56px;
+        margin-top: 102px;
         min-height: 68svh;
     }
 
@@ -3827,15 +3838,119 @@ section {
     }
 
     .page-shell {
-        margin-top: 56px;
+        margin-top: 102px;
     }
+}
 
-    .site-menu-overlay {
-        top: 56px;
-    }
+/* === About page: deep espresso (no ivory, no gradient) === */
+body.page-about {
+    background: #161010;
+    color: #E8DDD3;
+}
 
-    .site-menu-panel {
-        top: 56px;
-        padding-top: 18px;
-    }
+.page-about .page-shell {
+    background: #161010;
+}
+
+.page-about .page-header {
+    background: #161010;
+    color: #F4EDE6;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+}
+
+.page-about .page-header h1 {
+    color: #F4EDE6;
+}
+
+.page-about .page-header p {
+    color: #C8B8AC;
+    opacity: 1;
+}
+
+.page-about .master-greeting,
+.page-about .craftsman,
+.page-about .distribution {
+    background: #161010;
+}
+
+.page-about .company-info,
+.page-about .technology {
+    background: #1C1412;
+}
+
+.page-about .master-headline,
+.page-about .signature-text,
+.page-about .section-title,
+.page-about .dist-item h3,
+.page-about .info-card h2,
+.page-about .craftsman-text h2,
+.page-about .tech-card h3 {
+    color: #F4EDE6;
+}
+
+.page-about .section-title::after {
+    background: #D4AF37;
+}
+
+.page-about .section-desc,
+.page-about .master-quote p,
+.page-about .craftsman-text p,
+.page-about .craftsman-features li,
+.page-about .dist-item p,
+.page-about .tech-card p {
+    color: #C8B8AC;
+}
+
+.page-about .master-quote p:first-child {
+    color: #F4EDE6;
+    border-left-color: #D4AF37;
+}
+
+.page-about .quote-detail {
+    color: #C8B8AC !important;
+}
+
+.page-about .signature-title,
+.page-about .title-divider {
+    color: #A8988C;
+}
+
+.page-about .master-signature {
+    border-top-color: rgba(212, 175, 55, 0.28);
+}
+
+.page-about .craftsman-name {
+    color: #D4AF37;
+}
+
+.page-about .info-card,
+.page-about .tech-card {
+    background: #241A17;
+    box-shadow: none;
+    border: 1px solid rgba(212, 175, 55, 0.16);
+}
+
+.page-about .info-item {
+    background: #1C1412;
+    border-left-color: #C83226;
+}
+
+.page-about .info-label {
+    color: #A8988C;
+}
+
+.page-about .info-value {
+    color: #F4EDE6;
+}
+
+.page-about .info-value a {
+    color: #E8C9A8;
+}
+
+.page-about .dist-item {
+    border-bottom-color: rgba(212, 175, 55, 0.18);
+}
+
+.page-about .dist-item:hover {
+    border-bottom-color: #D4AF37;
 }
