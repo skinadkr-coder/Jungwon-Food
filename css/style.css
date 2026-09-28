@@ -18,6 +18,11 @@
     --secondary-navy: #111827;
     --secondary-charcoal: #1A202C;
     --secondary-slate: #475569;
+    --secondary-green: #C83226;
+    --secondary-green-dark: #111827;
+    --primary-burgundy: #C83226;
+    --bg-warm-ivory: #F7F6F3;
+    --text-deep-slate: #0F172A;
     
     --accent-orange: #C2410C;
     --accent-amber: #FEF3C7;
@@ -145,7 +150,7 @@ button {
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid #ECEFEF;
-    z-index: 1000;
+    z-index: 1200;
 }
 
 .header-container {
@@ -227,6 +232,42 @@ button {
     letter-spacing: -0.01em;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 2px 8px rgba(200, 50, 38, 0.25);
+    white-space: nowrap;
+}
+
+@media (max-width: 1023px) {
+    .header-container {
+        height: 56px;
+        padding: 0 12px 0 14px;
+    }
+
+    .logo-emblem {
+        width: 38px;
+        height: 38px;
+    }
+
+    .logo-ko {
+        font-size: 1.5rem;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+    }
+
+    .header-cta-btn {
+        padding: 5px 11px;
+        font-size: 11px;
+        font-weight: 700;
+        border-radius: 999px;
+        box-shadow: none;
+    }
+
+    .header-cta-btn:hover {
+        transform: none;
+    }
+
+    .hamburger {
+        width: 36px;
+        height: 36px;
+    }
 }
 
 .header-cta-btn:hover {
@@ -280,8 +321,11 @@ button {
 .site-menu-overlay {
     display: none;
     position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.28);
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 18, 24, 0.45);
     z-index: 1100;
 }
 
@@ -290,39 +334,167 @@ button {
 }
 
 .site-menu-panel {
-    display: none;
+    display: flex;
+    flex-direction: column;
     position: fixed;
-    top: 60px;
-    left: 12px;
-    right: 12px;
-    background: #FFFFFF;
-    border: 1px solid #E2E8F0;
-    border-radius: 16px;
-    padding: 10px;
+    top: 56px;
+    right: 0;
+    bottom: 0;
+    width: min(86vw, 340px);
+    background: #F7F6F3;
     z-index: 1101;
-    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+    padding: 20px 22px 24px;
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.32s;
+    overflow-y: auto;
+    box-shadow: -16px 0 40px rgba(15, 23, 42, 0.16);
 }
 
 .site-menu-panel.is-open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.mnav-head {
+    margin-bottom: 8px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #E7E2DA;
+}
+
+.mnav-brand {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: #111827;
+    letter-spacing: -0.03em;
+}
+
+.mnav-brand-en {
+    margin-top: 4px;
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8A8174;
+}
+
+.mnav-list {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    flex: 1;
 }
 
 .site-menu-link {
-    display: block;
-    padding: 14px 16px;
-    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 4px;
+    border-bottom: 1px solid #EDE8E1;
+    border-radius: 0;
     color: #1E293B;
-    font-size: 1rem;
-    font-weight: 700;
     text-decoration: none;
+    background: transparent;
+}
+
+.site-menu-link:last-child {
+    border-bottom: none;
+}
+
+.mnav-ico {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: #EFEAE3;
+    color: #7C746A;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.mnav-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.mnav-ko {
+    font-size: 1.0625rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.mnav-en {
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9188;
 }
 
 .site-menu-link:hover,
+.site-menu-link:active {
+    background: rgba(200, 50, 38, 0.04);
+    color: #C83226;
+}
+
+.site-menu-link:hover .mnav-ico {
+    background: #F8E8E6;
+    color: #C83226;
+}
+
 .site-menu-link.active {
-    background: #111827;
+    background: transparent;
+    color: #C83226;
+    box-shadow: inset 3px 0 0 #C83226;
+    padding-left: 8px;
+}
+
+.site-menu-link.active .mnav-ico {
+    background: #C83226;
     color: #FFFFFF;
+}
+
+.site-menu-link.active .mnav-en {
+    color: #C83226;
+}
+
+.mnav-card {
+    margin-top: auto;
+    background: #FFFFFF;
+    border: 1px solid #E7E2DA;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.mnav-card-label {
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #8A8174;
+    font-weight: 700;
+}
+
+.mnav-card-phone {
+    display: block;
+    margin: 8px 0 12px;
+    font-size: 1.375rem;
+    font-weight: 800;
+    color: #111827;
+    text-decoration: none;
+    letter-spacing: -0.03em;
+}
+
+.mnav-card-btn {
+    display: block;
+    text-align: center;
+    padding: 11px 14px;
+    border-radius: 999px;
+    background: #C83226;
+    color: #FFFFFF;
+    font-size: 0.8125rem;
+    font-weight: 800;
+    text-decoration: none;
 }
 
 body.menu-open {
@@ -1121,13 +1293,13 @@ body.drawer-open {
 /* === Hero Section — restrained premium editorial === */
 .hero {
     position: relative;
-    min-height: calc(100svh - 60px);
+    min-height: 72svh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #F7F6F3;
+    background: #161010;
     overflow: hidden;
-    margin-top: 60px;
+    margin-top: 56px;
 }
 
 .hero-overlay {
@@ -1138,7 +1310,7 @@ body.drawer-open {
     position: relative;
     z-index: 1;
     text-align: center;
-    padding: 48px 20px 120px;
+    padding: 28px 20px 96px;
     max-width: 720px;
     width: 100%;
 }
@@ -1147,24 +1319,24 @@ body.drawer-open {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 14px;
-    background: rgba(30, 41, 59, 0.08);
-    border: 1px solid rgba(30, 41, 59, 0.12);
+    padding: 7px 14px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(229, 192, 123, 0.45);
     border-radius: 999px;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
-    color: #334155;
-    letter-spacing: 1px;
+    color: #E8D5A8;
+    letter-spacing: 1.4px;
     text-transform: uppercase;
     line-height: 1.3;
     white-space: nowrap;
-    margin: 0 auto 28px;
+    margin: 0 auto 18px;
     box-shadow: none;
 }
 
 @media (min-width: 400px) {
     .hero-mini-badge {
-        font-size: 12px;
+        font-size: 11px;
         letter-spacing: 1.5px;
         padding: 8px 16px;
     }
@@ -1174,15 +1346,20 @@ body.drawer-open {
     display: none;
 }
 
+.hero::before {
+    display: none;
+}
+
 .hero-title {
     font-family: var(--font-primary);
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: #111827;
-    line-height: 1.35;
-    margin: 0 0 20px;
-    letter-spacing: -0.03em;
+    font-size: clamp(1.85rem, 7.2vw, 2.4rem);
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 1.28;
+    margin: 0 0 16px;
+    letter-spacing: -0.045em;
     word-break: keep-all;
+    text-shadow: 0 10px 32px rgba(0, 0, 0, 0.55), 0 2px 0 rgba(0, 0, 0, 0.25);
 }
 
 .hero-title-main {
@@ -1190,20 +1367,21 @@ body.drawer-open {
 }
 
 .hero-title-main + .hero-title-main {
-    margin-top: 6px;
+    margin-top: 4px;
 }
 
 .hero-title-accent {
-    color: #C5A880;
-    font-weight: 800;
+    color: #F0D48A;
+    font-weight: 900;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.28), 0 0 32px rgba(240, 212, 138, 0.45);
 }
 
 .hero-subcopy {
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     font-weight: 400;
-    color: #64748B;
+    color: rgba(255, 255, 255, 0.82);
     line-height: 1.7;
-    margin: 0 auto 32px;
+    margin: 0 auto 24px;
     max-width: 520px;
     letter-spacing: -0.01em;
 }
@@ -1223,14 +1401,14 @@ body.drawer-open {
     justify-content: center;
     gap: 8px;
     width: 100%;
-    min-height: 54px;
+    min-height: 50px;
     padding: 0 20px;
     border-radius: 999px;
-    font-size: 0.9375rem;
+    font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     text-decoration: none;
-    color: #1E293B;
+    color: #FFFFFF;
     transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -1240,14 +1418,16 @@ body.drawer-open {
 }
 
 .hero-cta-primary {
-    background: rgba(30, 41, 59, 0.04);
-    border: 1.5px solid #C5A880;
+    background: rgba(229, 192, 123, 0.14);
+    border: 1.5px solid #E5C07B;
     box-shadow: none;
+    color: #FFF8E8;
 }
 
 .hero-cta-secondary {
-    background: #FFFFFF;
-    border: 1.5px solid #CBD5E1;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1.5px solid rgba(255, 255, 255, 0.38);
+    color: #FFFFFF;
 }
 
 .hero-cta-btn:hover {
@@ -1255,11 +1435,12 @@ body.drawer-open {
 }
 
 .hero-cta-primary:hover {
-    background: rgba(197, 168, 128, 0.12);
+    background: rgba(229, 192, 123, 0.22);
 }
 
 .hero-cta-secondary:hover {
-    border-color: #94A3B8;
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.12);
 }
 
 .hero-red-pill-btn,
@@ -1926,14 +2107,16 @@ section {
     background: #111827;
     color: #FFFFFF;
     text-align: center;
-    padding: var(--spacing-xl) 20px;
-    margin: 0 0 24px;
+    padding: 40px 20px 36px;
+    margin: 0;
 }
 
 .cta-section h2 {
     font-size: 1.375rem;
     font-weight: 800;
     margin-bottom: 8px;
+    word-break: keep-all;
+    line-height: 1.4;
 }
 
 .cta-section p {
@@ -1956,19 +2139,45 @@ section {
 
 .cta-section p {
     font-size: 1.125rem;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: 24px;
     opacity: 0.95;
 }
 
 .cta-section .btn-primary {
-    background: var(--white);
-    color: var(--primary-burgundy);
-    border-color: var(--white);
+    background: #C83226;
+    color: #FFFFFF;
+    border-color: #C83226;
 }
 
 .cta-section .btn-primary:hover {
-    background: var(--off-white);
-    border-color: var(--off-white);
+    background: #B02A1F;
+    border-color: #B02A1F;
+    color: #FFFFFF;
+}
+
+.cta-section .btn-outline {
+    background: transparent;
+    color: #FFFFFF;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.cta-section .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+.home-cta-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+.home-cta-actions .btn {
+    width: 100%;
 }
 
 /* === Contact Section === */
@@ -2062,9 +2271,9 @@ section {
 
 /* === Footer === */
 .footer {
-    background: var(--secondary-green-dark);
-    color: var(--white);
-    padding: var(--spacing-xxl) 0 120px;
+    background: #111827;
+    color: #FFFFFF;
+    padding: 48px 0 128px;
 }
 
 .footer-content {
@@ -3136,16 +3345,8 @@ section {
         padding: 8px 18px;
     }
     
-    .hero {
-        margin-top: 64px;
-    }
-
     .page-shell {
         margin-top: 64px;
-    }
-
-    .site-menu-panel {
-        top: 64px;
     }
     
     .logo-subtitle {
@@ -3158,8 +3359,7 @@ section {
     }
     
     .hero {
-        min-height: calc(100vh - 64px);
-        margin-top: 64px;
+        min-height: 74svh;
     }
 
     .hero-content {
@@ -3573,5 +3773,69 @@ section {
     body {
         font-size: 12pt;
         color: #000;
+    }
+}
+
+/* === Mobile header / hero / drawer lock === */
+@media (max-width: 1023px) {
+    .header {
+        z-index: 1200;
+    }
+
+    .header-container {
+        height: 56px;
+        padding: 0 12px 0 14px;
+    }
+
+    .header .logo-emblem {
+        width: 36px;
+        height: 36px;
+    }
+
+    .header .logo-ko {
+        font-size: clamp(1.2rem, 4.8vw, 1.55rem);
+        font-weight: 900;
+        color: #111827;
+        letter-spacing: -0.045em;
+        text-shadow: none;
+        line-height: 1.1;
+    }
+
+    .header .header-cta-btn {
+        padding: 5px 11px;
+        font-size: 11px;
+        font-weight: 700;
+        border-radius: 999px;
+        box-shadow: none;
+        letter-spacing: -0.02em;
+    }
+
+    .header .hamburger {
+        width: 36px;
+        height: 36px;
+        z-index: 1201;
+        position: relative;
+    }
+
+    .hero {
+        margin-top: 56px;
+        min-height: 68svh;
+    }
+
+    .hero-content {
+        padding: 20px 20px 88px;
+    }
+
+    .page-shell {
+        margin-top: 56px;
+    }
+
+    .site-menu-overlay {
+        top: 56px;
+    }
+
+    .site-menu-panel {
+        top: 56px;
+        padding-top: 18px;
     }
 }
