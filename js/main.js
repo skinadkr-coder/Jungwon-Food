@@ -1,5 +1,6 @@
 /**
  * 주식회사 정원푸드 — 멀티 페이지 공통 스크립트
+ * 메뉴 <a> 클릭은 가로채지 않는다. 브라우저가 href HTML 파일로 바로 이동한다.
  */
 
 (function() {
@@ -11,7 +12,7 @@
 
     function init() {
         setupActiveNav();
-        setupMobileMenu();
+        setupMobileMenuToggle();
         setupHeaderScroll();
         setupDesktopTabAlign();
         setupContactForm();
@@ -39,11 +40,15 @@
         });
     }
 
-    function setupMobileMenu() {
+    function setupMobileMenuToggle() {
         var hamburger = document.getElementById('hamburger');
         var panel = document.getElementById('mobileMenuPanel');
         var overlay = document.getElementById('menuOverlay');
         if (!hamburger || !panel || !overlay) return;
+
+        function isOpen() {
+            return panel.classList.contains('is-open');
+        }
 
         function openMenu() {
             hamburger.classList.add('active');
@@ -62,7 +67,7 @@
         }
 
         hamburger.addEventListener('click', function() {
-            if (panel.classList.contains('is-open')) {
+            if (isOpen()) {
                 closeMenu();
             } else {
                 openMenu();
@@ -70,18 +75,6 @@
         });
 
         overlay.addEventListener('click', closeMenu);
-
-        panel.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', function() {
-                closeMenu();
-            });
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeMenu();
-            }
-        });
     }
 
     function setupDesktopTabAlign() {
@@ -90,7 +83,7 @@
         if (!mark || !nav) return;
 
         function alignNav() {
-            if (window.innerWidth < 768) {
+            if (window.innerWidth < 1024) {
                 nav.style.paddingLeft = '';
                 return;
             }
