@@ -5,6 +5,7 @@
 
 /* === Pretendard 웹폰트 === */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&display=swap');
 
 /* === CSS Variables === */
 :root {
@@ -49,6 +50,7 @@
     
     /* 타이포그래피 - Pretendard */
     --font-primary: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --font-serif: 'Noto Serif KR', 'Noto Serif', Georgia, serif;
     --font-weight-light: 300;
     --font-weight-regular: 400;
     --font-weight-medium: 500;
@@ -194,11 +196,19 @@ button {
 }
 
 .logo-ko {
-    font-size: 1.75rem;
-    font-weight: var(--font-weight-black);
+    font-family: var(--font-primary);
+    font-size: 1.125rem;
+    font-weight: 800;
     color: var(--text-midnight);
-    letter-spacing: -0.035em;
-    line-height: 1;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+}
+
+.logo-ko strong,
+.logo-brand {
+    font-family: inherit;
+    font-weight: 900;
+    color: #C83226;
 }
 
 .logo-badge {
@@ -242,20 +252,20 @@ button {
 
 @media (max-width: 1023px) {
     .header-container {
-        height: 64px;
+        height: 56px;
         padding: 0 16px;
         justify-content: flex-start;
     }
 
     .logo-emblem {
-        width: 44px;
-        height: 44px;
+        width: 34px;
+        height: 34px;
     }
 
     .logo-ko {
-        font-size: 1.85rem;
-        font-weight: 900;
-        letter-spacing: -0.04em;
+        font-size: 1.125rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
     }
 
     .header-cta-btn {
@@ -588,11 +598,12 @@ body.menu-open {
 }
 
 .logo-ko {
-    font-size: 1.75rem;
-    font-weight: var(--font-weight-black);
+    font-family: var(--font-primary);
+    font-size: 1.125rem;
+    font-weight: 800;
     color: var(--text-midnight);
-    letter-spacing: -0.035em;
-    line-height: 1;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
     text-shadow: none;
 }
 
@@ -3328,7 +3339,8 @@ section {
     }
     
     .logo-ko {
-        font-size: 1.85rem;
+        font-size: 1.25rem;
+        font-weight: 800;
     }
     
     .header-container {
@@ -3506,14 +3518,16 @@ section {
 /* Desktop (1024px+) */
 @media (min-width: 1024px) {
     .logo-emblem {
-        width: 48px;
-        height: 48px;
+        width: 40px;
+        height: 40px;
     }
     
     .logo-ko {
-        font-size: 2.2rem;
+        font-family: var(--font-primary);
+        font-size: 1.375rem;
+        font-weight: 800;
         color: #111827;
-        letter-spacing: -0.04em;
+        letter-spacing: -0.03em;
         text-shadow: none;
     }
     
@@ -3790,24 +3804,30 @@ section {
     }
 
     .header-container {
-        height: 64px;
+        height: 56px;
         padding: 0 16px;
         justify-content: flex-start;
     }
 
     .header .logo-emblem {
-        width: 46px;
-        height: 46px;
+        width: 34px;
+        height: 34px;
     }
 
     .header .logo-ko {
-        font-size: clamp(1.85rem, 8.4vw, 2.25rem);
-        font-weight: 900;
+        font-family: var(--font-primary);
+        font-size: 1.125rem;
+        font-weight: 800;
         color: #111827;
-        letter-spacing: -0.05em;
+        letter-spacing: -0.03em;
         text-shadow: none;
-        line-height: 1.05;
+        line-height: 1.2;
         white-space: nowrap;
+    }
+
+    .header .logo-ko strong {
+        font-family: inherit;
+        font-weight: 900;
     }
 
     .header .header-cta-btn {
@@ -3840,7 +3860,7 @@ section {
     }
 
     .hero {
-        margin-top: 118px;
+        margin-top: 110px;
         min-height: 68svh;
     }
 
@@ -3849,7 +3869,7 @@ section {
     }
 
     .page-shell {
-        margin-top: 118px;
+        margin-top: 110px;
     }
 }
 
