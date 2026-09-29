@@ -175,40 +175,63 @@ button {
 .logo a {
     display: flex;
     align-items: center;
-    gap: 0.625rem;
+    gap: 0.7rem;
     text-decoration: none;
 }
 
+.logo-mark,
 .logo-emblem {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
+    display: block;
 }
 
-.logo-emblem svg {
+.logo-emblem svg,
+.logo-mark svg {
     width: 100%;
     height: 100%;
 }
 
+.logo-lockup,
 .logo-text {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    line-height: 1;
+}
+
+.logo-wordmark {
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #1A1A1A;
+    letter-spacing: -0.045em;
+    line-height: 1.05;
+    white-space: nowrap;
+}
+
+.logo-food {
+    color: #C83226;
 }
 
 .logo-ko {
     font-family: var(--font-primary);
-    font-size: 1.125rem;
-    font-weight: 800;
-    color: var(--text-midnight);
-    letter-spacing: -0.03em;
-    line-height: 1.2;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #64748B;
+    letter-spacing: 0.18em;
+    line-height: 1.35;
+    margin-top: 0.08rem;
 }
 
 .logo-ko strong,
 .logo-brand {
     font-family: inherit;
-    font-weight: 900;
+    font-weight: 800;
     color: #C83226;
+    letter-spacing: 0;
 }
 
 .logo-badge {
@@ -257,15 +280,20 @@ button {
         justify-content: flex-start;
     }
 
+    .logo-mark,
     .logo-emblem {
-        width: 34px;
-        height: 34px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .logo-wordmark {
+        font-size: 1.05rem;
     }
 
     .logo-ko {
-        font-size: 1.125rem;
-        font-weight: 800;
-        letter-spacing: -0.03em;
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
     }
 
     .header-cta-btn {
@@ -578,32 +606,42 @@ body.menu-open {
 }
 
 /* Logo Emblem - Compact */
+.logo-mark,
 .logo-emblem {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
 }
 
 .logo-emblem svg {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 2px 8px rgba(14, 83, 56, 0.15));
 }
 
 /* Logo Text Block - Clean Typography */
+.logo-lockup,
 .logo-text {
     display: flex;
     flex-direction: column;
-    gap: 0.125rem;
+    gap: 0;
+}
+
+.logo-wordmark {
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #1A1A1A;
+    letter-spacing: -0.045em;
+    line-height: 1.05;
 }
 
 .logo-ko {
     font-family: var(--font-primary);
-    font-size: 1.125rem;
-    font-weight: 800;
-    color: var(--text-midnight);
-    letter-spacing: -0.03em;
-    line-height: 1.2;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #64748B;
+    letter-spacing: 0.18em;
+    line-height: 1.35;
     text-shadow: none;
 }
 
@@ -2304,6 +2342,30 @@ section {
     margin-bottom: var(--spacing-xl);
 }
 
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+}
+
+.footer-brand img {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+}
+
+.footer-brand .logo-wordmark {
+    color: #FFFFFF;
+    font-size: 1.15rem;
+}
+
+.footer-brand .logo-ko {
+    color: rgba(255, 255, 255, 0.72);
+    letter-spacing: 0.16em;
+}
+
 .footer-logo h3 {
     font-size: 1.375rem;
     font-weight: var(--font-weight-bold);
@@ -2505,6 +2567,7 @@ section {
     width: 100%;
     height: 240px;
     object-fit: cover;
+    object-position: 50% 58%;
     display: block;
 }
 
@@ -3341,14 +3404,21 @@ section {
 
 /* Tablet (768px+) */
 @media (min-width: 768px) {
+    .logo-mark,
     .logo-emblem {
-        width: 42px;
-        height: 42px;
+        width: 40px;
+        height: 40px;
     }
     
+    .logo-wordmark {
+        font-size: 1.22rem;
+    }
+
     .logo-ko {
-        font-size: 1.25rem;
-        font-weight: 800;
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: #64748B;
+        letter-spacing: 0.18em;
     }
     
     .header-container {
@@ -3525,17 +3595,22 @@ section {
 
 /* Desktop (1024px+) */
 @media (min-width: 1024px) {
+    .logo-mark,
     .logo-emblem {
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .logo-wordmark {
+        font-size: 1.28rem;
     }
     
     .logo-ko {
         font-family: var(--font-primary);
-        font-size: 1.375rem;
-        font-weight: 800;
-        color: #111827;
-        letter-spacing: -0.03em;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: #64748B;
+        letter-spacing: 0.2em;
         text-shadow: none;
     }
     
@@ -3730,6 +3805,32 @@ section {
     padding: 24px 20px;
 }
 
+.facility-card-photo {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.facility-card-photo img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.facility-card-photo img[src*="facility-sort"] {
+    object-position: 50% 32%;
+}
+
+.facility-card-photo img[src*="facility-line"] {
+    object-position: 42% 48%;
+}
+
+.facility-card-photo .facility-card-body {
+    padding: 20px;
+}
+
 .facility-card h3 {
     font-size: 1.0625rem;
     font-weight: 800;
@@ -3817,25 +3918,32 @@ section {
         justify-content: flex-start;
     }
 
+    .header .logo-mark,
     .header .logo-emblem {
         width: 34px;
         height: 34px;
     }
 
+    .header .logo-wordmark {
+        font-size: 1.02rem;
+    }
+
     .header .logo-ko {
         font-family: var(--font-primary);
-        font-size: 1.125rem;
-        font-weight: 800;
-        color: #111827;
-        letter-spacing: -0.03em;
+        font-size: 0.58rem;
+        font-weight: 700;
+        color: #64748B;
+        letter-spacing: 0.14em;
         text-shadow: none;
-        line-height: 1.2;
+        line-height: 1.3;
         white-space: nowrap;
     }
 
     .header .logo-ko strong {
         font-family: inherit;
-        font-weight: 900;
+        font-weight: 800;
+        color: #C83226;
+        letter-spacing: 0;
     }
 
     .header .header-cta-btn {

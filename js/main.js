@@ -40,7 +40,7 @@
     }
 
     function setupDesktopTabAlign() {
-        var mark = document.querySelector('.logo-sa-mark');
+        var mark = document.querySelector('.logo-wordmark');
         var nav = document.querySelector('.sub-tab-nav');
         if (!mark || !nav) return;
 

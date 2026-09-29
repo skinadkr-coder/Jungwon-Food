@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo-jungwonfood-mark.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/logo-jungwonfood-mark.png">
     <meta name="description" content="정원푸드 HACCP 위생시설 - 저온발효 공장, 청결 생산 라인, 수출 품질 관리">
     <title>시설/위생 | 주식회사 정원푸드</title>
-    <link rel="stylesheet" href="css/style.css?v=20260929n">
+    <link rel="stylesheet" href="css/style.css?v=20260930d">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@500;600;700&display=swap" rel="stylesheet">
@@ -14,24 +16,12 @@
     <header class="header">
         <div class="header-container">
             <div class="logo">
-                <a href="index.html">
-                    <div class="logo-emblem">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="48" fill="url(#gradientRed)" stroke="#C83226" stroke-width="2"/>
-                            <defs>
-                                <linearGradient id="gradientRed" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#D32F2F;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#C83226;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <path d="M50 25 Q35 35 35 50 Q35 65 50 75 Q65 65 65 50 Q65 35 50 25 Z" fill="#FFFFFF" opacity="0.95"/>
-                            <path d="M50 30 Q40 38 40 50 Q40 62 50 70 Q60 62 60 50 Q60 38 50 30 Z" fill="#FEF3C7" opacity="0.7"/>
-                            <line x1="50" y1="30" x2="50" y2="70" stroke="#FFFFFF" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <div class="logo-text">
-                        <span class="logo-ko">주식회<span class="logo-sa-mark">사</span> <strong class="logo-brand">정원푸드</strong></span>
-                    </div>
+                <a href="index.html" aria-label="jungwonfood 정원푸드 홈">
+                    <img class="logo-mark" src="images/logo-jungwonfood-mark.svg" alt="">
+                    <span class="logo-lockup">
+                        <span class="logo-wordmark">jungwon<span class="logo-food">food</span></span>
+                        <span class="logo-ko">정원푸드</span>
+                    </span>
                 </a>
             </div>
         </div>
@@ -56,8 +46,8 @@
         <section class="location-section">
             <div class="container">
                 <div class="factory-image">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=80"
-                         alt="정원푸드 김치 제조공장 외부 전경"
+                    <img src="images/facility-hygiene.jpg?v=1"
+                         alt="정원푸드 본공장 세척·위생 생산 라인"
                          class="factory-photo">
                     <div class="factory-badge">JUNGWON FOOD FACTORY</div>
                 </div>
@@ -84,13 +74,19 @@
                         <h3>수출 특화 포장 라인</h3>
                         <p>장기 운송과 북미 유통에 맞는 밀폐 용기 시스템을 적용해 가스와 누액을 최소화합니다.</p>
                     </article>
-                    <article class="facility-card">
-                        <h3>작업자 위생 동선</h3>
-                        <p>출입, 세척, 작업복 교체 동선을 분리해 교차오염을 막고 청결구역을 유지합니다.</p>
+                    <article class="facility-card facility-card-photo">
+                        <img src="images/facility-line.jpg?v=1" alt="위생복 착용 후 배추 생산 라인에서 작업하는 모습">
+                        <div class="facility-card-body">
+                            <h3>작업자 위생 동선</h3>
+                            <p>출입, 세척, 작업복 교체 동선을 분리해 교차오염을 막고 청결구역을 유지합니다.</p>
+                        </div>
                     </article>
-                    <article class="facility-card">
-                        <h3>원재료 선별</h3>
-                        <p>국내산 배추·양념 원료를 입고 즉시 선별하고, 부적합 원료는 생산 라인에 투입하지 않습니다.</p>
+                    <article class="facility-card facility-card-photo">
+                        <img src="images/facility-sort.jpg?v=1" alt="배추 원재료를 선별·다듬는 작업">
+                        <div class="facility-card-body">
+                            <h3>원재료 선별</h3>
+                            <p>국내산 배추·양념 원료를 입고 즉시 선별하고, 부적합 원료는 생산 라인에 투입하지 않습니다.</p>
+                        </div>
                     </article>
                     <article class="facility-card">
                         <h3>출고 전 검사</h3>
@@ -150,7 +146,13 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <h3>주식회사 정원푸드</h3>
+                    <a href="index.html" class="footer-brand" aria-label="jungwonfood 정원푸드">
+                        <img src="images/logo-jungwonfood-mark.svg" alt="">
+                        <span class="logo-lockup">
+                            <span class="logo-wordmark">jungwon<span class="logo-food">food</span></span>
+                            <span class="logo-ko">주식회사 정원푸드</span>
+                        </span>
+                    </a>
                     <p class="footer-en">JUNGWON FOOD CO., LTD.</p>
                 </div>
                 <div class="footer-info">
@@ -184,6 +186,6 @@
         </a>
     </div>
 
-    <script src="js/main.js?v=20260929h"></script>
+    <script src="js/main.js?v=20260930a"></script>
 </body>
 </html>
